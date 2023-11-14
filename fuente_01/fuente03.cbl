@@ -49,11 +49,14 @@
        01  SALDO-Z     PIC Z(6)9,99.
        01  SALDO-ZZ    PIC ------9,99.
 
+       01  MESES.
+           03  MES OCCURS 12 TIMES.
+               05 MES-NOMBRE       PIC  X(20).
+
        PROCEDURE DIVISION.
        MAIN-PROCEDURE.
-           PERFORM ABRO-ARCHIVOS.
-           PERFORM LEO-DATOS THRU F-LEO-DATOS.
-           PERFORM CIERRO-ARCHIVOS.
+           MOVE "ENERO" TO MES-NOMBRE(01).
+           MOVE "FEBRERO" TO MES-NOMBRE(02).
            STOP RUN.
        ABRO-ARCHIVOS.
            OPEN I-O CLIENTES.
